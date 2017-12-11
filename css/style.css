@@ -1,0 +1,13 @@
+/* Display URL of hyperlinks when printing */
+@media print {
+  a:after {
+    content: " (" attr(href) ")";
+  }
+}
+
+/* Example media query expression for Responsive Web Design */
+@media (orientation: portrait) and (min-width:980px) {
+  html {
+    display: none;
+  }
+}
