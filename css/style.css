@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans&subset=cyrillic');
+
 /* Display URL of hyperlinks when printing */
 @media print {
   a:after {
@@ -6,9 +8,58 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.37em;
-    max-width: 47em;
+  font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.37;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+h1, h2, h3 {
+  color: rgba(0, 0, 0, 1);
+  font-weight: 300;
+  margin-top: 1.618em;
+}
+
+#main-content {
+  max-width: 40em;
+  margin: 0 auto;
+  padding: 0 1em;
+}
+
+.question {
+  border: 1px solid rgba(0, 0, 0, .3);
+  border-radius: 0.618em;
+  overflow: hidden;
+  color: black;
+}
+
+
+ul.question {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.question > li {
+  cursor: pointer;
+  padding: 1.618em;
+}
+
+.question > li:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, .3);
+}
+
+.question > li:hover {
+  background-color: rgba(0, 0, 255, .2);
+}
+
+.question header {
+  padding-bottom: 0.618em;
+}
+
+.shadow {
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
