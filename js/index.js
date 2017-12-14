@@ -94,9 +94,17 @@ function update () {
 
     res.append('h2').text('Ваш соционический тип личности')
     res.append('p').text(test.types.default[type])
-    res.append('p').text('Название типа по Аушре Аугустинавичюте: ' + test.types.aushra[type])
-    res.append('p').text('Название типа по Виктору Гуленко: ' + test.types.gulenko[type])
-    res.append('p').text('Соответствующий тип по типологии MBTI: ' + test.types.mbti[type])
+    var s = ''
+    s += 'Псевдоним типа по Аушре Аугустинавичюте: ' + test.types.aushra[type] + '<br>'
+    s += 'Псевдоним типа по Виктору Гуленко: ' + test.types.gulenko[type] + '<br>'
+    s += 'Соответствующий тип по типологии MBTI: ' + test.types.mbti[type]
+    res.append('p').html(s)
+    // res.append('p').text('Название типа по Аушре Аугустинавичюте: ' + test.types.aushra[type])
+    // res.append('p').text('Название типа по Виктору Гуленко: ' + test.types.gulenko[type])
+    // res.append('p').text('Соответствующий тип по типологии MBTI: ' + test.types.mbti[type])
+
+    res.append('h2').text('Описание типа')
+    res.append('section').html(test.descriptions[type])
 
     res.append('h2').text('Ваш выбор')
     var enter = res.selectAll('.answer').data(answered).enter()
