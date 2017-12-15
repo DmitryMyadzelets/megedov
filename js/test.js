@@ -244,7 +244,7 @@ function update () {
 }
 
 ready(function init () {
-  d3.select('#intro').text('Выберите наиболее подходящее для вас утверждение.')
+  d3.select('#intro').text('Выберите наиболее подходящее для вас утверждение:')
   update()
 })
 
