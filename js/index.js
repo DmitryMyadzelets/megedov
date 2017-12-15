@@ -39,7 +39,6 @@ function select (d) {
 }
 
 function question (parent, data) {
-  console.log(data)
   var update = parent.selectAll('.question')
     .data(data, function (d) {
       return d.id
@@ -92,16 +91,13 @@ function update () {
       })
       .join('')
 
-    res.append('h2').text('Ваш соционический тип личности')
+    res.append('h2').text('Ваш соционический тип')
     res.append('p').text(test.types.default[type])
-    var s = ''
-    s += 'Псевдоним типа по Аушре Аугустинавичюте: ' + test.types.aushra[type] + '<br>'
-    s += 'Псевдоним типа по Виктору Гуленко: ' + test.types.gulenko[type] + '<br>'
-    s += 'Соответствующий тип по типологии MBTI: ' + test.types.mbti[type]
-    res.append('p').html(s)
-    // res.append('p').text('Название типа по Аушре Аугустинавичюте: ' + test.types.aushra[type])
-    // res.append('p').text('Название типа по Виктору Гуленко: ' + test.types.gulenko[type])
-    // res.append('p').text('Соответствующий тип по типологии MBTI: ' + test.types.mbti[type])
+    // var s = ''
+    // s += 'Псевдоним типа по Аушре Аугустинавичюте: ' + test.types.aushra[type] + '<br>'
+    // s += 'Псевдоним типа по Виктору Гуленко: ' + test.types.gulenko[type] + '<br>'
+    // s += 'Соответствующий тип по типологии MBTI: ' + test.types.mbti[type]
+    // res.append('p').html(s)
 
     res.append('h2').text('Описание типа')
     res.append('section').html(test.descriptions[type])
@@ -121,6 +117,6 @@ function update () {
 }
 
 ready(function init () {
-  d3.select('#intro').text(test.intro)
+  d3.select('#intro').text('Выберите наиболее подходящее для вас утверждение.')
   update()
 })

@@ -29,7 +29,6 @@ module.exports = function (callback) {
 },{}],2:[function(require,module,exports){
 module.exports={
     "title":"Тест Мегедь-Овчарова на принадлежность к соционическому типу",
-    "intro":"Выберите наиболее подходящее для вас утверждение.",
     "questions":{
         "1":{
             "J":"Ваша работоспособность равномерна, а если меняется, то только по известной вам причине. Вы не любите откладывать дела \"на потом\", предпочитая готовиться ко всему заранее, и не склонны менять свои планы или решения. Вас тяготит неопределенность, поэтому вы предпочитаете иметь четкий временной график работы.",
@@ -86,60 +85,6 @@ module.exports={
             "INFJ":"Этико-интуитивный интраверт (ЭИИ)",
             "ENFP":"Интуитивно-этический экстраверт (ИЭЭ)",
             "ISTP":"Сенсорно-логический интраверт (СЛИ)"
-        },
-        "aushra":{
-            "ENTP":"Дон Кихот",
-            "ISFP":"Дюма",
-            "ESFJ":"Гюго",
-            "INTJ":"Робеспьер",
-            "ENFJ":"Гамлет",
-            "ISTJ":"Максим Горький",
-            "ESTP":"Жуков",
-            "INFP":"Есенин",
-            "ESFP":"Наполеон",
-            "INTP":"Бальзак",
-            "ENTJ":"Джек Лондон",
-            "ISFJ":"Драйзер",
-            "ESTJ":"Штирлиц",
-            "INFJ":"Достоевский",
-            "ENFP":"Гексли",
-            "ISTP":"Габен"
-        },
-        "megedov":{
-            "ENTP":"Новатор",
-            "ISFP":"Посредник",
-            "ESFJ":"Коммуникатор",
-            "INTJ":"Аналитик",
-            "ENFJ":"Наставник",
-            "ISTJ":"Администратор",
-            "ESTP":"Лидер",
-            "INFP":"Идеалист",
-            "ESFP":"Политик",
-            "INTP":"Эксперт",
-            "ENTJ":"Экспериментатор",
-            "ISFJ":"Традиционалист",
-            "ESTJ":"Управляющий",
-            "INFJ":"Гуманист",
-            "ENFP":"Вдохновитель",
-            "ISTP":"Мастер"
-        },
-        "gulenko":{
-            "ENTP":"Искатель",
-            "ISFP":"Посредник",
-            "ESFJ":"Энтузиаст",
-            "INTJ":"Аналитик",
-            "ENFJ":"Наставник",
-            "ISTJ":"Инспектор",
-            "ESTP":"Маршал",
-            "INFP":"Лирик",
-            "ESFP":"Политик",
-            "INTP":"Критик",
-            "ENTJ":"Предприниматель",
-            "ISFJ":"Хранитель",
-            "ESTJ":"Администратор",
-            "INFJ":"Гуманист",
-            "ENFP":"Советчик",
-            "ISTP":"Мастер"
         },
         "mbti":{
             "ENTP":"ENTP",
@@ -221,7 +166,6 @@ function select (d) {
 }
 
 function question (parent, data) {
-  console.log(data)
   var update = parent.selectAll('.question')
     .data(data, function (d) {
       return d.id
@@ -274,16 +218,13 @@ function update () {
       })
       .join('')
 
-    res.append('h2').text('Ваш соционический тип личности')
+    res.append('h2').text('Ваш соционический тип')
     res.append('p').text(test.types.default[type])
-    var s = ''
-    s += 'Псевдоним типа по Аушре Аугустинавичюте: ' + test.types.aushra[type] + '<br>'
-    s += 'Псевдоним типа по Виктору Гуленко: ' + test.types.gulenko[type] + '<br>'
-    s += 'Соответствующий тип по типологии MBTI: ' + test.types.mbti[type]
-    res.append('p').html(s)
-    // res.append('p').text('Название типа по Аушре Аугустинавичюте: ' + test.types.aushra[type])
-    // res.append('p').text('Название типа по Виктору Гуленко: ' + test.types.gulenko[type])
-    // res.append('p').text('Соответствующий тип по типологии MBTI: ' + test.types.mbti[type])
+    // var s = ''
+    // s += 'Псевдоним типа по Аушре Аугустинавичюте: ' + test.types.aushra[type] + '<br>'
+    // s += 'Псевдоним типа по Виктору Гуленко: ' + test.types.gulenko[type] + '<br>'
+    // s += 'Соответствующий тип по типологии MBTI: ' + test.types.mbti[type]
+    // res.append('p').html(s)
 
     res.append('h2').text('Описание типа')
     res.append('section').html(test.descriptions[type])
@@ -303,7 +244,7 @@ function update () {
 }
 
 ready(function init () {
-  d3.select('#intro').text(test.intro)
+  d3.select('#intro').text('Выберите наиболее подходящее для вас утверждение.')
   update()
 })
 
