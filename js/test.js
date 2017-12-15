@@ -187,7 +187,7 @@ function choice (parent) {
   var enter = update.enter()
   var q = enter.append('li').on('click', select)
   // q.append('header')
-  //   .text(function (d) {
+  //   .html(function (d) {
   //     return test.lables[d.id]
   //   })
   q.append('section')
@@ -218,18 +218,18 @@ function update () {
       })
       .join('')
 
-    res.append('h2').text('Ваш соционический тип')
-    res.append('p').text(test.types.default[type])
+    res.append('h2').html('Ваш соционический тип')
+    res.append('p').html(test.types.default[type])
     // var s = ''
     // s += 'Псевдоним типа по Аушре Аугустинавичюте: ' + test.types.aushra[type] + '<br>'
     // s += 'Псевдоним типа по Виктору Гуленко: ' + test.types.gulenko[type] + '<br>'
     // s += 'Соответствующий тип по типологии MBTI: ' + test.types.mbti[type]
     // res.append('p').html(s)
 
-    res.append('h2').text('Описание типа')
+    res.append('h2').html('Описание типа')
     res.append('section').html(test.descriptions[type])
 
-    res.append('h2').text('Ваш выбор')
+    res.append('h2').html('Ваш выбор')
     var enter = res.selectAll('.answer').data(answered).enter()
     var div = enter.append('div').classed('answer', true)
     div.append('h3')
@@ -244,7 +244,7 @@ function update () {
 }
 
 ready(function init () {
-  d3.select('#intro').text('Выберите наиболее подходящее для вас утверждение:')
+  d3.select('#intro').html('Выберите наиболее подходящее для вас утверждение:')
   update()
 })
 
