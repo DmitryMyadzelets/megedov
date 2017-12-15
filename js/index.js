@@ -64,7 +64,7 @@ function choice (parent) {
   //     return test.lables[d.id]
   //   })
   q.append('section')
-    .text(function (d) {
+    .html(function (d) {
       return d.value
     })
 }
@@ -106,11 +106,11 @@ function update () {
     var enter = res.selectAll('.answer').data(answered).enter()
     var div = enter.append('div').classed('answer', true)
     div.append('h3')
-      .text(function (d) {
+      .html(function (d) {
         return test.lables[d.id]
       })
     div.append('p')
-      .text(function (d) {
+      .html(function (d) {
         return d.value
       })
   }
