@@ -38,6 +38,24 @@
         "E":0,
         "I":0
     },
+    "map":{
+        "ENTP":"ILE",
+        "ISFP":"SEI",
+        "ESFJ":"ESE",
+        "INTJ":"LII",
+        "ENFJ":"EIE",
+        "ISTJ":"LSI",
+        "ESTP":"SLE",
+        "INFP":"IEI",
+        "ESFP":"SEE",
+        "INTP":"ILI",
+        "ENTJ":"LIE",
+        "ISFJ":"ESI",
+        "ESTJ":"LSE",
+        "INFJ":"EII",
+        "ENFP":"IEE",
+        "ISTP":"SLI"
+    },
     "types":{
         "default":{
             "ENTP":"Интуитивно-логический экстраверт (ИЛЭ)",
